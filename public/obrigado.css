@@ -1,0 +1,220 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url("img/fundo.png");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+}
+
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  padding-top: 40px;
+}
+
+
+.emoji-grande {
+  font-size: 5rem;
+  text-align: center;
+  animation: pula 0.6s ease;
+}
+
+@keyframes pula {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+.senha-card {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  border: 2px solid #4caf50;
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.senha-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.senha-numero {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 6rem;
+  color: #f5e642;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(245, 230, 66, 0.4);
+}
+
+
+.detalhe-card {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px 24px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.detalhe-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detalhe-linha:last-child {
+  border-bottom: none;
+}
+
+.detalhe-linha .label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detalhe-linha .valor {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.detalhe-linha .valor.destaque {
+  color: #f5e642;
+  font-size: 1.3rem;
+}
+
+
+.mensagem {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.mensagem span {
+  color: #f5e642;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-imprimir {
+  width: 100%;
+  padding: 14px;
+  background: none;
+  border: 2px solid #f5e642;
+  border-radius: 25px;
+  color: #f5e642;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-imprimir:hover {
+  background: #f5e642;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.btn-novo {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff00aa, #b3940b);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
+}
+
+.btn-novo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff00aa;
+}
+
+.btn-inicio {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-inicio:hover {
+  border-color: #ff00aa;
+  color: #ff00aa;
+  transform: scale(1.05);
+}
+
+
+@media print {
+  body { background: white; }
+  .botoes { display: none; }
+  .senha-card, .detalhe-card { background: white; backdrop-filter: none; box-shadow: none; border-color: #000; }
+  .senha-numero, h1, .detalhe-linha .valor, .detalhe-linha .valor.destaque { color: #000; text-shadow: none; }
+  .detalhe-linha .label { color: #555; }
+  .mensagem { color: #333; }
+}

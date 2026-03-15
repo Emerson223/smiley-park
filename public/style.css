@@ -1,0 +1,81 @@
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image: url("img/fundo.png");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  text-align:center;
+  padding:90px;
+  width:450px;
+  background: rgba(255, 255, 255, 0.575);
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.logo{
+
+width:250px;
+margin-bottom:30px;
+animation: brilho 3s infinite alternate;
+
+}
+
+@keyframes brilho{
+
+from{
+
+filter: drop-shadow(0 0 10px #ff00aa);
+
+}
+
+to{
+
+filter: drop-shadow(0 0 35px #00ffff);
+
+}
+
+}
+
+.titulo{
+
+font-size:40px;
+margin-bottom:20px;
+
+}
+
+.subtitulo{
+
+font-size:20px;
+margin-bottom:40px;
+
+}
+
+button{
+
+font-size:18px;
+padding:25px 80px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#ff00aa,#b3940b);
+color:rgb(202, 202, 202);
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 20px #3f7c7c;
+font-family: 'Poppins', sans-serif;
+margin-top: 49px;
+}
+
+button:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 40px #ff00aa;
+
+}

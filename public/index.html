@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cliente - Smiley Park</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">  
+    <img src="img/logosmiley.png" class="logo">
+
+    <h1 class="welcome-text">SEJA BEM-VINDO AO SMILEY PARK</h1>
+    <h2 class="instruction-text">CLIQUE NO BOTÃO PARA PEGAR SUA SENHA</h2>
+
+    <div class="fila-box">
+      <button id="pegarSenha">PEGAR SENHA</button>
+    </div>
+
+    <div class="senha" id="senha"></div>
+
+  <audio id="somChamada" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+  <script>
+    const pegarSenha = document.getElementById("pegarSenha");
+    pegarSenha.addEventListener("click", () => {
+      window.location.href = "cardapio.html";
+    });
+  </script>
+</body>
+</html>

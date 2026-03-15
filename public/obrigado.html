@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado - Smiley Park</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="obrigado.css">
+</head>
+</head>
+<body>
+  <div class="container">
+
+    <div class="emoji-grande">🎉</div>
+    <h1>Obrigado pela compra!</h1>
+
+    <div class="senha-card">
+      <div class="senha-label">Sua senha</div>
+      <div class="senha-numero" id="senhaNome"></div>
+    </div>
+
+    <div class="detalhe-card">
+      <div class="detalhe-linha">
+        <span class="label">Itens</span>
+        <span class="valor" id="detProdutos"></span>
+      </div>
+      <div class="detalhe-linha">
+        <span class="label">Pagamento</span>
+        <span class="valor" id="detPagamento"></span>
+      </div>
+      <div class="detalhe-linha">
+        <span class="label">Total</span>
+        <span class="valor destaque" id="detTotal"></span>
+      </div>
+    </div>
+
+    <p class="mensagem">
+      Sua senha será chamada em breve.<br>
+      <span>Divirta-se no Smiley Park! 😊</span>
+    </p>
+
+    <div class="botoes">
+      <button class="btn-imprimir" onclick="window.print()">🖨️ IMPRIMIR COMPROVANTE</button>
+      <button class="btn-novo" onclick="window.location.href='cardapio.html'">🎟️ NOVO INGRESSO</button>
+      <button class="btn-inicio" onclick="window.location.href='index.html'">← VOLTAR AO INÍCIO</button>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var params = new URLSearchParams(window.location.search);
+
+      var senha     = params.get('senha')     || '001';
+      var pagamento = params.get('pagamento') || '-';
+      var produtos  = params.get('produtos')  || '-';
+      var total     = params.get('total')     || '0.00';
+
+      document.getElementById('senhaNome').textContent   = '#' + senha;
+      document.getElementById('detProdutos').textContent = produtos;
+      document.getElementById('detPagamento').textContent = pagamento;
+      document.getElementById('detTotal').textContent    = 'R$ ' + parseFloat(total).toFixed(2).replace('.', ',');
+    });
+  </script>
+</body>
+</html>

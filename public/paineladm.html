@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin - Smiley Park</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="paineladm.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎛️ Painel Admin — Smiley Park</h1>
+    <div class="header-acoes">
+      <button class="btn-atualizar" id="btnAtualizar">🔄 Atualizar</button>
+      <button class="btn-config" id="btnConfig">🔐 Senha</button>
+      <span id="ultimaAtualizacao">--</span>
+    </div>
+  </div>
+
+  <div class="resumo">
+    <div class="resumo-card">
+      <div class="num" id="totalPedidos">0</div>
+      <div class="leg">Total pedidos</div>
+    </div>
+    <div class="resumo-card">
+      <div class="num" id="totalAguardando">0</div>
+      <div class="leg">Aguardando</div>
+    </div>
+    <div class="resumo-card">
+      <div class="num" id="totalFinalizados">0</div>
+      <div class="leg">Finalizados</div>
+    </div>
+    <div class="resumo-card">
+      <div class="num" id="totalPessoas">0</div>
+      <div class="leg">Pessoas hoje</div>
+    </div>
+  </div>
+
+  <div class="total-arrecadado">
+    <span class="label">💰 Total arrecadado hoje</span>
+    <span class="valor" id="totalArrecadado">R$ 0,00</span>
+  </div>
+
+  <div class="filtros">
+    <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+    <button class="filtro-btn" data-filtro="aguardando">Aguardando</button>
+    <button class="filtro-btn" data-filtro="chamando">Chamando</button>
+    <button class="filtro-btn" data-filtro="brincando">🎮 Brincando</button>
+    <button class="filtro-btn" data-filtro="finalizado">Finalizado</button>
+  </div>
+
+  <div class="tabela-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Senha</th>
+          <th>Pessoas</th>
+          <th>Tempo</th>
+          <th>Pagamento</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>⏱️ Restante</th>
+          <th>Horário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaBody">
+        <tr><td colspan="9"><div class="vazio"><span>📋</span>Carregando pedidos...</div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MODAL TROCAR SENHA -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none">
+    <div class="modal">
+      <h2>🔐 Trocar Senha</h2>
+      <input type="password" id="senhaAtual" placeholder="Senha atual">
+      <input type="password" id="senhaNova" placeholder="Nova senha">
+      <input type="password" id="senhaConfirm" placeholder="Confirmar nova senha">
+      <div class="modal-erro" id="modalErro" style="display:none"></div>
+      <div class="modal-sucesso" id="modalSucesso" style="display:none">✅ Senha alterada!</div>
+      <div class="modal-botoes">
+        <button id="btnSalvarSenha">💾 Salvar</button>
+        <button id="btnFecharModal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="paineladm.js"></script>
+</body>
+</html>

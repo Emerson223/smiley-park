@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Smiley Park</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="card">
+    <img src="img/logosmiley.png" class="logo" onerror="this.style.display='none'">
+    <h1>Painel Admin</h1>
+    <p class="sub">Digite a senha para continuar</p>
+
+    <div class="input-wrap">
+      <input type="password" id="senha" placeholder="Senha" autocomplete="off">
+      <button id="btnMostrar">👁️</button>
+    </div>
+
+    <div class="erro" id="erro" style="display:none">❌ Senha incorreta!</div>
+
+    <button class="btn-entrar" id="btnEntrar">ENTRAR</button>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

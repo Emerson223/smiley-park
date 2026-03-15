@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TV - Smiley Park</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tv.css">
+</head>
+<body>
+
+  <div class="tela" id="telaEspera">
+    <img src="img/logosmiley.png" class="logo" onerror="this.style.display='none'">
+    <h1>SMILEY PARK</h1>
+    <p class="sub-espera">Aguardando próxima senha...</p>
+    <div class="pontos">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="tela" id="telaAtiva" style="display:none">
+    <div class="topo">
+      <img src="img/logosmiley.png" class="logo-pequeno" onerror="this.style.display='none'">
+      <span class="topo-label">SMILEY PARK</span>
+    </div>
+    <div class="senhas-grid" id="senhasGrid"></div>
+  </div>
+
+  <script src="tv.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Comprar Ingresso - Smiley Park</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <img src="img/logosmiley.png" class="logo" onerror="this.style.display='none'">
+      <h1>SMILEY PARK</h1>
+      <p class="subtitulo">Escolha seu ingresso</p>
+    </div>
+
+    <div class="card" id="step1">
+      <div class="card-title">👥 QUANTAS PESSOAS?</div>
+      <div class="counter-row">
+        <button class="btn-counter" id="btnMenos">−</button>
+        <span class="counter-num" id="numPessoas">1</span>
+        <button class="btn-counter" id="btnMais">+</button>
+      </div>
+      <div class="group-info" id="groupInfo"></div>
+    </div>
+
+    <div class="card" id="step2">
+      <div class="card-title">⏱️ TEMPO DE INGRESSO</div>
+      <div class="opcoes-grid" id="gridDuracao">
+        <button class="opcao-btn active" data-min="30" data-preco="30">
+          <span class="opcao-tempo">30 min</span>
+          <span class="opcao-preco">R$ 30,00</span>
+          <span class="opcao-sub">por pessoa</span>
+        </button>
+        <button class="opcao-btn" data-min="50" data-preco="50">
+          <span class="opcao-tempo">50 min</span>
+          <span class="opcao-preco">R$ 50,00</span>
+          <span class="opcao-sub">por pessoa</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="card" id="step3">
+      <div class="card-title">➕ TEMPO EXTRA <span class="card-sub">(R$ 1,00 por minuto)</span></div>
+      <div class="extra-row">
+        <label>Minutos extras:</label>
+        <input type="number" id="extraMin" value="0" min="0" max="999">
+        <span class="extra-label">min / pessoa</span>
+      </div>
+    </div>
+
+    <div class="card" id="step4">
+      <div class="card-title">🧦 MEIAS ANTIDERRAPANTES</div>
+      <div class="aviso-meia">⚠️ Obrigatório uso de meias antiderrapantes por segurança.</div>
+      <div class="opcoes-grid grid3" id="gridMeias">
+        <button class="opcao-btn active" data-preco="0">
+          <span class="opcao-tempo">Sem meia</span>
+          <span class="opcao-preco">R$ 0</span>
+          <span class="opcao-sub">tenho a minha</span>
+        </button>
+        <button class="opcao-btn" data-preco="30">
+          <span class="opcao-tempo">Smiley Néon</span>
+          <span class="opcao-preco">R$ 30,00</span>
+          <span class="opcao-sub">bilheteria</span>
+        </button>
+        <button class="opcao-btn" data-preco="25">
+          <span class="opcao-tempo">Smiley Néon</span>
+          <span class="opcao-preco">R$ 25,00</span>
+          <span class="opcao-sub">grupos</span>
+        </button>
+        <button class="opcao-btn" data-preco="20">
+          <span class="opcao-tempo">Básica</span>
+          <span class="opcao-preco">R$ 20,00</span>
+          <span class="opcao-sub">bilheteria</span>
+        </button>
+        <button class="opcao-btn" data-preco="15">
+          <span class="opcao-tempo">Básica</span>
+          <span class="opcao-preco">R$ 15,00</span>
+          <span class="opcao-sub">grupos</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="card" id="step5">
+  <div class="card-title">💳 FORMA DE PAGAMENTO</div>
+  <div class="pagamento-grid" id="gridPagamento">
+    <button class="pag-btn" data-pag="Pix">
+      <span class="pag-icon">📱</span>
+      <span class="pag-nome">Pix</span>
+    </button>
+    <button class="pag-btn" data-pag="Cartão de Crédito">
+      <span class="pag-icon">💳</span>
+      <span class="pag-nome">Crédito</span>
+    </button>
+    <button class="pag-btn" data-pag="Cartão de Débito">
+      <span class="pag-icon">💴</span>
+      <span class="pag-nome">Débito</span>
+    </button>
+    <button class="pag-btn" data-pag="Dinheiro">
+      <span class="pag-icon">💵</span>
+      <span class="pag-nome">Dinheiro</span>
+    </button>
+  </div>
+</div>
+
+    <div class="total-card" id="cardTotal">
+      <div class="total-linhas" id="totalLinhas"></div>
+      <div class="total-divisor"></div>
+      <div class="total-row">
+        <span class="total-label">💰 TOTAL</span>
+        <span class="total-valor" id="totalValor">R$ 30,00</span>
+      </div>
+      <div class="total-por-pessoa">
+        <span id="porPessoaLabel">Por pessoa</span>
+        <span id="porPessoaValor">R$ 30,00</span>
+      </div>
+    </div>
+
+    <div class="botoes-finais" id="botoesFinais">
+      <button class="btn-confirmar" id="btnConfirmar">✅ CONFIRMAR INGRESSO</button>
+      <button class="btn-voltar" id="btnVoltar">← VOLTAR</button>
+    </div>
+
+    <div class="senha-box" id="senhaBox" style="display:none">
+      <div class="senha-titulo">🎉 INGRESSO CONFIRMADO!</div>
+      <div class="senha-numero" id="senhaNumero"></div>
+      <div class="senha-detalhe" id="senhaDetalhe"></div>
+      <button class="btn-imprimir" id="btnImprimir">🖨️ IMPRIMIR</button>
+      <button class="btn-novo" id="btnNovo">+ NOVO INGRESSO</button>
+    </div>
+
+  </div>
+  <script src="cardapio.js"></script>
+</body>
+</html>
