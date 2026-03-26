@@ -10,11 +10,22 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+.h1{
+color: aliceblue;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.h2{
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+}
+
+
 .container{
   text-align:center;
   padding:90px;
   width:450px;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(189, 189, 189, 0.699);
   backdrop-filter: blur(10px);
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);

@@ -45,22 +45,75 @@
       <button class="btn-inicio" onclick="window.location.href='index.html'">← VOLTAR AO INÍCIO</button>
     </div>
 
+<div class="cupom" id="cupom">
+  <div class="cupom-header">
+    <img src="img/logosmiley.png" class="cupom-logo" onerror="this.style.display='none'">
+    <h2>SMILEY PARK</h2>
+    <p>Sistema de Bilheteria</p>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var params = new URLSearchParams(window.location.search);
+  <div class="cupom-divisor">================================</div>
 
-      var senha     = params.get('senha')     || '001';
-      var pagamento = params.get('pagamento') || '-';
-      var produtos  = params.get('produtos')  || '-';
-      var total     = params.get('total')     || '0.00';
+  <div class="cupom-linha">
+    <span id="cupomData"></span>
+  </div>
 
-      document.getElementById('senhaNome').textContent   = '#' + senha;
-      document.getElementById('detProdutos').textContent = produtos;
-      document.getElementById('detPagamento').textContent = pagamento;
-      document.getElementById('detTotal').textContent    = 'R$ ' + parseFloat(total).toFixed(2).replace('.', ',');
-    });
-  </script>
+  <div class="cupom-divisor">--------------------------------</div>
+
+  <div class="cupom-senha">
+    SENHA: <strong id="cupomSenha"></strong>
+  </div>
+
+  <div class="cupom-divisor">--------------------------------</div>
+
+  <div class="cupom-linha">
+    <span>Itens:</span>
+    <span id="cupomItens"></span>
+  </div>
+  <div class="cupom-linha">
+    <span>Pagamento:</span>
+    <span id="cupomPagamento"></span>
+  </div>
+
+  <div class="cupom-divisor">--------------------------------</div>
+
+  <div class="cupom-total">
+    TOTAL: <strong id="cupomTotal"></strong>
+  </div>
+
+  <div class="cupom-divisor">================================</div>
+
+  <div class="cupom-rodape">
+    <p>Divirta-se no Smiley Park!</p>
+    <p>Obrigado pela preferencia!</p>
+  </div>
+</div>
+
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+
+    var senha     = params.get('senha')     || '001';
+    var pagamento = params.get('pagamento') || '-';
+    var produtos  = params.get('produtos')  || '-';
+    var total     = params.get('total')     || '0.00';
+
+    document.getElementById('senhaNome').textContent    = '#' + senha;
+    document.getElementById('detProdutos').textContent  = produtos;
+    document.getElementById('detPagamento').textContent = pagamento;
+    document.getElementById('detTotal').textContent     = 'R$ ' + parseFloat(total).toFixed(2).replace('.', ',');
+
+    var agora = new Date();
+    var data  = agora.toLocaleDateString('pt-BR');
+    var hora  = agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+    document.getElementById('cupomSenha').textContent     = '#' + senha;
+    document.getElementById('cupomData').textContent      = 'Data: ' + data + '  Hora: ' + hora;
+    document.getElementById('cupomItens').textContent     = produtos;
+    document.getElementById('cupomPagamento').textContent = pagamento;
+    document.getElementById('cupomTotal').textContent     = 'R$ ' + parseFloat(total).toFixed(2).replace('.', ',');
+  });
+</script>
 </body>
 </html>
