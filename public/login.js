@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btnEntrar.textContent = 'Verificando...';
     btnEntrar.disabled = true;
 
-    fetch('http://localhost:3000/admin/login', {
+    fetch('https://smiley-park.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ senha: digitado })

@@ -80,7 +80,7 @@ function renderSenhas(pedidos) {
 }
 
 function verificarSenhas() {
-  fetch('http://localhost:3000/senha-atual')
+  fetch('https://smiley-park.onrender.com')
     .then(function(res) { return res.json(); })
     .then(function(pedidos) {
       renderSenhas(pedidos);

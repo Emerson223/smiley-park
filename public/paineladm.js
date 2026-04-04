@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    fetch('http://localhost:3000/admin/trocar-senha', {
+    fetch('https://smiley-park.onrender.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ senhaAtual: atual, senhaNova: nova })
