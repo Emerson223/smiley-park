@@ -2,6 +2,7 @@ const express = require('express');
 const cors    = require('cors');
 const path    = require('path');
 const db      = require('./banco');
+console.log('DATABASE_URL existe?', process.env.DATABASE_URL ? 'SIM' : 'NÃO');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
