@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('smileySenha', contador);
     var senha = String(contador).padStart(3, '0');
 
-    fetch('https://smiley-park.onrender.com', {
+    fetch('https://smiley-park.onrender.com/pedido', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
